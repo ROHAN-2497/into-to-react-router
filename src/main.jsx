@@ -12,6 +12,7 @@ import Friends from "./component/Friends/Friends.jsx";
 import FriendDetail from "./component/FriendDetail/FriendDetail.jsx";
 import Posts from "./component/posts/posts.jsx";
 import PostDetail from "./component/PostDetail/PostDetail.jsx";
+import ErrorCompo from "./component/ErrorCompo/ErrorCompo.jsx";
 
 /* const router = createBrowserRouter([ 
   {
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: '*',
+        element: <ErrorCompo></ErrorCompo>
       },
     ],
   },

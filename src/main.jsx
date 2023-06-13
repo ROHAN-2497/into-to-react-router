@@ -34,28 +34,32 @@ const router = createBrowserRouter([
     element: <Home></Home>,
     children: [
       {
-        path:  '/',
-        element:<First></First>
+        path: "/",
+        element: <First></First>,
       },
       {
-       path: 'friends',
-       element:<Friends></Friends>,
-       loader:() =>fetch('https://jsonplaceholder.typicode.com/users')
+        path: "friends",
+        element: <Friends></Friends>,
+        loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
       },
       {
-        path:'posts',
-        element:<Posts></Posts>,
-        loader: ()=> fetch('https://jsonplaceholder.typicode.com/posts')
+        path: "posts",
+        element: <Posts></Posts>,
+        loader: () => fetch("https://jsonplaceholder.typicode.com/posts"),
       },
       {
-        path:'post/:postId',
+        path: "post/:postId",
         element: <PostDetail></PostDetail>,
-        loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`)
+        loader: ({ params }) =>
+          fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`),
       },
       {
-        path: 'friend/:friendId',
-        element:<FriendDetail></FriendDetail>,
-        loader: ({params})=> fetch(`https://jsonplaceholder.typicode.com/users/${params.friendId}`)
+        path: "friend/:friendId",
+        element: <FriendDetail></FriendDetail>,
+        loader: ({ params }) =>
+          fetch(
+            `https://jsonplaceholder.typicode.com/users/${params.friendId}`
+          ),
       },
       {
         path: "about",
